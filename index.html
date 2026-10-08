@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Padang bunga pink dan hijau bercahaya, dibuat dengan HTML, CSS, dan JavaScript."
+    />
+    <title>Little Gift — CSS Flower Garden</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="garden" aria-label="Padang bunga bercahaya di bawah langit malam">
+      <div class="stars" aria-hidden="true"></div>
+      <button class="moon" type="button" aria-label="Tekan bulan untuk kejutan" aria-controls="paper-plane" aria-expanded="false"></button>
+      <p class="moon-hint" aria-hidden="true">Klik bulannya untuk kejutan ✨</p>
+      <h1 class="title">Little Gift<span>Speed Recorvery Safa yang Cantik <i class="title-heart" aria-hidden="true">♥</i></span></h1>
+      <div class="music-player">
+        <audio id="garden-song" preload="auto" loop>
+          <source src="assets/little-gift-song.mp3" type="audio/mpeg" />
+        </audio>
+        <button class="music-toggle" type="button" aria-controls="garden-song" aria-pressed="false">
+          <span class="music-icon" aria-hidden="true">♫</span>
+          <span class="music-label">Putar lagu</span>
+        </button>
+        <label class="music-volume">
+          <span class="visually-hidden">Volume lagu</span>
+          <input type="range" min="0" max="35" value="16" aria-label="Volume lagu" />
+        </label>
+        <span class="music-status visually-hidden" aria-live="polite"></span>
+      </div>
+      <div class="haze" aria-hidden="true"></div>
+      <div class="hills" aria-hidden="true"></div>
+      <div class="ground-glow" aria-hidden="true"></div>
+      <div class="floaters" aria-hidden="true"></div>
+
+      <button class="paper-plane" id="paper-plane" type="button" aria-haspopup="dialog" aria-controls="gift-letter" hidden>
+        <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <path d="M5 29.5 58 6 40 58 29 37 5 29.5Zm25.7 5.3L52 12 12 29l18.7 5.8Zm0 0L40 51l7.5-21.7-16.8 5.5Z" />
+        </svg>
+        <span>Klik pesawat untuk membuka surat</span>
+      </button>
+
+      <dialog class="surprise-dialog" aria-labelledby="surprise-title">
+        <div class="surprise-card">
+          <span class="surprise-flower" aria-hidden="true">✿</span>
+          <p class="surprise-kicker">Ada kejutan kecil!</p>
+          <h2 id="surprise-title">Surat spesial untukmu <span aria-hidden="true">♥</span></h2>
+          <p class="surprise-copy">Lihat, ada pesawat kertas yang membawa pesan manis. Klik pesawatnya, ya!</p>
+          <button class="surprise-continue" type="button">Lihat pesawat ✨</button>
+        </div>
+      </dialog>
+
+      <dialog class="letter-dialog" id="gift-letter" aria-labelledby="letter-title">
+        <article class="letter">
+          <p class="letter-kicker"> Surat Special buat kamu </p>
+          <h2 id="letter-title">Untuk Safa yang Cantik <span aria-hidden="true">♥</span></h2>
+          <div class="letter-copy">
+            <p>Hai, Safa!</p>
+            <p>
+              Semogaa kamu cepet pulih dari sakit kamu ini yaa. Jangan lupa istirahat,
+              minum vitamin dan obat yang aku kasih, dan makan minum yang lebih banyak
+              untuk energi kamu.
+            </p>
+            <p>
+              Maafin aku yaa buat semuanya, aku harap kita bisa selesaiin dan bisaa balik
+              intense lagii. Aku ada disini buat kamu kapanpun dan dimanapun kamu butuh.
+              Andelin aku terus yaa, i'll help u to carry a lot problems. U mean everything
+              to me
+            </p>
+            <p>
+              Let me hold ur hand, and pat ur head kalo kita ketemu yaa. Bersender di pundak
+              aku ketika kamu cape, ngeluh dan ungkapin aja segala perasaan kamu. Anggep aku
+              " Rumah " yaa cantik.
+            </p>
+            <p class="letter-signoff">Dengan sayang, <span>♥</span></p>
+          </div>
+          <button class="letter-close" type="button">Lipat suratnya, peluk aku nanti yaa ♥</button>
+        </article>
+      </dialog>
+
+      <div class="flowers">
+        <div class="flower flower--far-left" aria-hidden="true">
+          <div class="stem"><i class="leaf leaf--left"></i><i class="leaf leaf--right"></i></div>
+          <div class="bloom">
+            <i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i>
+            <i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i>
+            <i class="heart"></i>
+          </div>
+        </div>
+        <div class="flower flower--left" data-photo tabindex="0" role="button" aria-label="Tampilkan foto polaroid di bunga kiri" aria-expanded="false">
+          <div class="stem"><i class="leaf leaf--left"></i><i class="leaf leaf--right"></i></div>
+          <div class="bloom">
+            <i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i>
+            <i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i>
+            <i class="heart"></i>
+          </div>
+          <figure class="photo-polaroid">
+            <img src="assets/safa-left.jpg" alt="Foto Safa yang dipasang pada bunga kiri" />
+            <figcaption>Safa <span aria-hidden="true">♥</span></figcaption>
+          </figure>
+        </div>
+        <div class="flower flower--right" data-photo tabindex="0" role="button" aria-label="Tampilkan foto polaroid di bunga kanan" aria-expanded="false">
+          <div class="stem"><i class="leaf leaf--left"></i><i class="leaf leaf--right"></i></div>
+          <div class="bloom">
+            <i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i>
+            <i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i>
+            <i class="heart"></i>
+          </div>
+          <figure class="photo-polaroid">
+            <img src="assets/safa-right.jpg" alt="Foto Safa yang dipasang pada bunga kanan" />
+            <figcaption>Safa <span aria-hidden="true">♥</span></figcaption>
+          </figure>
+        </div>
+        <div class="flower flower--far-right" aria-hidden="true">
+          <div class="stem"><i class="leaf leaf--left"></i><i class="leaf leaf--right"></i></div>
+          <div class="bloom">
+            <i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i>
+            <i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i>
+            <i class="heart"></i>
+          </div>
+        </div>
+        <div class="flower flower--hero" data-photo tabindex="0" role="button" aria-label="Tampilkan foto polaroid di bunga tengah" aria-expanded="false">
+          <div class="stem">
+            <i class="leaf leaf--left"></i>
+            <i class="leaf leaf--right"></i>
+            <i class="leaf leaf--upper-left"></i>
+          </div>
+          <div class="bloom">
+            <i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i>
+            <i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i>
+            <i class="heart"></i>
+          </div>
+          <figure class="photo-polaroid">
+            <img src="assets/safa-center.jpg" alt="Foto Safa yang dipasang pada bunga tengah" />
+            <figcaption>Safa <span aria-hidden="true">♥</span></figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="firefly" aria-hidden="true"></div>
+      <div class="firefly" aria-hidden="true"></div>
+      <div class="firefly" aria-hidden="true"></div>
+      <div class="firefly" aria-hidden="true"></div>
+      <div class="firefly" aria-hidden="true"></div>
+    </main>
+    <script src="script.js" defer></script>
+  </body>
+</html>
